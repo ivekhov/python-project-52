@@ -8,16 +8,39 @@
 
 ### Project on Render: 
 
--  
+
+
+
+
+## Important resources and guidelines
+
+- https://12factor.net/ru/ 
+- https://pypi.org/project/dj-database-url/
+- Project page: https://ru.hexlet.io/projects/52/members/43671
+- 
+
+## Django
+
+- Docs: https://docs.djangoproject.com/en/5.1/ 
+- https://www.djangoproject.com/start/
+- https://docs.djangoproject.com/en/5.1/intro/tutorial01/ 
+- Course: https://ru.hexlet.io/courses/python-django-basics 
+
+
+## Project repo
+- https://github.com/ivekhov/python-project-52
+
 
 
 ## Commands 
 
+Creating project:
+
 ```bash
-# create project:
 $ uv run django-admin startproject task_manager .
+```
 
-# starting project
+Starting project
+```bash
 $ uv run python3 manage.py runserver
-
 ```
