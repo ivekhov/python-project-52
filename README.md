@@ -9,9 +9,6 @@
 ### Project on Render: 
 
 
-
-
-
 ## Important resources and guidelines
 
 - https://12factor.net/ru/ 
