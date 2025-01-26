@@ -23,7 +23,7 @@ lint_fix:
 migrations:
 	uv run python3 manage.py migrate
 
-start_uvicorn:
+render-start:
 	uv run python3 -m gunicorn task_manager.asgi:application -k uvicorn.workers.UvicornWorker
 
 prepare_dep_fo_render:
