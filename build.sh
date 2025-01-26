@@ -11,9 +11,12 @@ make install
 
 
 # Convert static asset files
-python manage.py collectstatic --no-input
+# python manage.py collectstatic --no-input
 # uv run python3 manage.py collectstatic --no-input
+make collectstatic
+
 
 # Apply any outstanding database migrations
-python manage.py migrate
+# python manage.py migrate
 # uv run python3 manage.py migrate
+make maigrate 

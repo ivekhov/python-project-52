@@ -28,3 +28,9 @@ render-start:
 
 prepare_dep_fo_render:
 	uv pip freeze > requirements.txt
+
+collectstatic:
+	uv run python3 manage.py collectstatic --no-input
+
+migrate:
+	uv run python3 manage.py migrate
