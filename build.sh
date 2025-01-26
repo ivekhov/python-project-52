@@ -19,4 +19,4 @@ make collectstatic
 # Apply any outstanding database migrations
 # python manage.py migrate
 # uv run python3 manage.py migrate
-make maigrate 
+make migrate 
