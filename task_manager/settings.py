@@ -34,6 +34,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     'webserver',
     '127.0.0.1',
+    'https://python-project-52-nkwi.onrender.com/',
 ]
 
 
