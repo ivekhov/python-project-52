@@ -14,7 +14,7 @@ https://python-project-52-nkwi.onrender.com/
 - https://12factor.net/ru/ 
 - https://pypi.org/project/dj-database-url/
 - Project page: https://ru.hexlet.io/projects/52/members/43671
-- 
+- https://ru.hexlet.io/projects/52/members/43671
 
 ## Django
 
@@ -43,7 +43,14 @@ $ uv run python3 manage.py runserver
 ```
 
 
-## Render Database instance
+## Render Details 
 
-https://dashboard.render.com/d/dpg-cub1t6bqf0us73cc3a00-a
+- Project Settings  https://dashboard.render.com/web/srv-cub2pj52ng1s73alm1m0/settings 
+
+- Database instance https://dashboard.render.com/d/dpg-cub1t6bqf0us73cc3a00-a
+
+- Render instructions
+
+    - https://render.com/docs/deploy-django
+    - https://dashboard.render.com/web/srv-cub2pj52ng1s73alm1m0/settings
 
