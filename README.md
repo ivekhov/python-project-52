@@ -41,3 +41,9 @@ Starting project
 ```bash
 $ uv run python3 manage.py runserver
 ```
+
+
+## Render Database instance
+
+https://dashboard.render.com/d/dpg-cub1t6bqf0us73cc3a00-a
+

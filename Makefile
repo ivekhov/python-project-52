@@ -1,3 +1,6 @@
+install:
+	uv sync
+
 start:
 	uv run python3 manage.py runserver
 
@@ -16,3 +19,9 @@ lint:
 
 lint_fix:
 	uv tool run ruff check . --fix
+
+migrations:
+	uv run python3 manage.py migrate
+
+start_uvicorn:
+	uv run python3 -m gunicorn task_manager.asgi:application -k uvicorn.workers.UvicornWorker
