@@ -25,7 +25,7 @@ migrations:
 	uv run python3 manage.py migrate
 
 render-start:
-	source $HOME/.local/bin/env && uv run python3 gunicorn task_manager.asgi:application -k uvicorn.workers.UvicornWorker
+	uv run python3 gunicorn task_manager.asgi:application -k uvicorn.workers.UvicornWorker
 
 render-start-new:
 	python manage.py runserver
