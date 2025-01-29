@@ -7,7 +7,6 @@ set -o errexit
 
 curl -LsSf https://astral.sh/uv/install.sh | sh
 source $HOME/.local/bin/env
-export PATH=$PATH:$HOME/.local/bin/env
 make install
 
 

@@ -3,7 +3,6 @@ install:
 
 start:
 	uv run python3 manage.py runserver
-	
 
 PORT ?= 8000
 stop:
@@ -25,11 +24,7 @@ migrations:
 	uv run python3 manage.py migrate
 
 render-start:
-	uv run python3 gunicorn task_manager.asgi:application -k uvicorn.workers.UvicornWorker
-
-render-start-new:
-	python manage.py runserver
-
+	gunicorn task_manager.asgi:application -k uvicorn.workers.UvicornWorker
 
 prepare_dep_fo_render:
 	uv pip freeze > requirements.txt
