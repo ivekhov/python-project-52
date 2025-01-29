@@ -3,6 +3,7 @@ install:
 
 start:
 	uv run python3 manage.py runserver
+	
 
 PORT ?= 8000
 stop:
@@ -24,7 +25,7 @@ migrations:
 	uv run python3 manage.py migrate
 
 render-start:
-	gunicorn task_manager.asgi:application -k uvicorn.workers.UvicornWorker
+	source $HOME/.local/bin/env && uv run python3 gunicorn task_manager.asgi:application -k uvicorn.workers.UvicornWorker
 
 render-start-new:
 	python manage.py runserver
