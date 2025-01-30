@@ -24,7 +24,10 @@ migrations:
 	uv run python3 manage.py migrate
 
 render-start:
-	gunicorn task_manager.asgi:application -k uvicorn.workers.UvicornWorker
+	echo $PATH
+	ls -ltah .venv/bin
+	gunicorn task_manager.asgi:application
+
 
 prepare_dep_fo_render:
 	uv pip freeze > requirements.txt
