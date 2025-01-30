@@ -24,9 +24,7 @@ migrations:
 	uv run python3 manage.py migrate
 
 render-start:
-	echo $$PATH
-	ls -ltah .venv/bin
-	gunicorn task_manager.asgi:application
+	gunicorn task_manager.wsgi
 
 
 prepare_dep_fo_render:

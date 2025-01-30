@@ -54,3 +54,12 @@ $ uv run python3 manage.py runserver
     - https://render.com/docs/deploy-django
     - https://dashboard.render.com/web/srv-cub2pj52ng1s73alm1m0/settings
 
+
+
+
+## Django notes
+
+Машрут - адреса, urls
+Контроллер, обработчик - слой кода, вьюхи, views 
+Шаблон - html templates 
+
