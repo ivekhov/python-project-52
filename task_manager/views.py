@@ -8,7 +8,7 @@ def index(request):
 
 
 def users(request):
-    return render(request, 'users.html')
+    return render(request)
 
 
 def login(request):

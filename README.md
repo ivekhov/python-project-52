@@ -63,3 +63,8 @@ $ uv run python3 manage.py runserver
 Контроллер, обработчик - слой кода, вьюхи, views 
 Шаблон - html templates 
 
+
+Эта команда сработала 
+```render-start:
+	gunicorn task_manager.wsgi
+```
