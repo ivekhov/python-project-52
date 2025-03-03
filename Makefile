@@ -34,3 +34,6 @@ collectstatic:
 
 migrate:
 	uv run python3 manage.py migrate
+
+make_migrations:
+	uv run python3 manage.py makemigrations
