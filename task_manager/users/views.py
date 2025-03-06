@@ -16,12 +16,12 @@ from django.views import View
 # from django.contrib.auth.mixins import LoginRequiredMixin
 # from django.views.generic.edit import CreateView
 
+from django.template import RequestContext
 
 from .models import CustomUser
 from .forms import CustomUserForm
 
 
-# create view for listing users
 class IndexView(View):
     '''View for listing users.'''
     def get(self, request, *args, **kwargs):
@@ -41,7 +41,7 @@ class UserFormCreateView(View):
         form = CustomUserForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('users')
+            return redirect('login') # to /login/ page
         return render(request, 'users/create.html', {'form': form})
 
 
