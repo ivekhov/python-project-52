@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% load django_bootstrap5 %}
+
+
+{% block content %}
+
+{% if form.errors %}
+<div>
+    <ul>
+    {% for error in form.errors %}
+        <li><strong>{{ error|escape }}</strong></li>
+    {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+<h1 class="my-4">Изменение пользователя</h1>
+    <form action="{% url 'users_update' id=user_id %}" method="post">
+    {% csrf_token %}
+        <div class="mb-3"><label class="form-label" for="first_name">Имя</label><input type="text" name="first_name" maxlength="150" class="form-control" placeholder="Имя" required id="first_name"></div>
+        <div class="mb-3"><label class="form-label" for="last_name">Фамилия</label><input type="text" name="last_name" maxlength="150" class="form-control" placeholder="Фамилия" required id="last_name"></div>
+        <div class="mb-3"><label class="form-label" for="username">Имя пользователя</label><input type="text" name="username" maxlength="150" autofocus class="form-control" placeholder="Имя пользователя" required aria-describedby="id_username_helptext" id="username">
+            <div class="form-text">Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./+/-/_.</div>
+        </div>
+        <div class="mb-3"><label class="form-label" for="password">Пароль</label><input type="password" name="password" autocomplete="new-password" class="form-control" placeholder="Пароль" aria-describedby="id_password1_helptext" id="password">
+            <div class="form-text"><ul><li>Ваш пароль должен содержать как минимум 3 символа.</li></ul></div>
+        </div>
+        <div class="mb-3"><label class="form-label" for="password">Подтверждение пароля</label><input type="password" name="password" autocomplete="new-password" class="form-control" placeholder="Подтверждение пароля" aria-describedby="id_password2_helptext" id="password">
+            <div class="form-text">Для подтверждения введите, пожалуйста, пароль ещё раз.</div>
+        </div>
+        <input class="btn btn-primary" type="submit" value="Сохранить">
+    </form>
+</div>
+
+{% endblock %}

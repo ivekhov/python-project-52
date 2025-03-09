@@ -15,5 +15,5 @@ class CustomUserForm(ModelForm):
             'last_name',
             'username',
             'password',
-            'password',
+            # 'password',
         ]
