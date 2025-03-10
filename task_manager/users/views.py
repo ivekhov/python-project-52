@@ -30,25 +30,45 @@ class UserFormCreateView(View):
         return render(request, 'users/create.html', {'form': form})
 
 
-# - [ ] GET /users/<int:pk>/update/ — страница редактирования пользователя
 class UserFormEditView(View):
     '''.'''
     def get(self, request, *args, **kwargs):
-        logging.warning(f'kwargs: {kwargs}')
         user_id = kwargs.get('pk')
-        logging.warning(f'user_id: {user_id}')
         user = CustomUser.objects.get(id=user_id)
-        logging.warning(f'user: {user}')
         form = CustomUserForm(instance=user)
-        return redirect(request, 'users/update.html', {'form': form, 'user_id': user_id})
+        return render(request, 'users/update.html', {'form': form, 'user_id': user_id})
 
 
     def post(self, request, *args, **kwargs):
-        user_id = kwargs.get('id')
+        user_id = kwargs.get('pk')
         user = CustomUser.objects.get(id=user_id)
         form = CustomUserForm(request.POST, instance=user)
         if form.is_valid():
             form.save()
-            return redirect('users')
-        
+            return redirect('users')        
         return render(request, 'users/update.html', {'form': form, 'user_id': user_id})
+
+
+class UserFormDeleteView(View):
+    '''.'''
+    def get(self, request, *args, **kwargs):
+        user_id = kwargs.get('pk')
+        user = CustomUser.objects.get(id=user_id)
+        form = CustomUserForm(instance=user)
+        return render(
+            request,
+            'users/delete.html',
+            {
+                'form': form,
+                'user': user,
+                'user_id': user_id
+            }
+        )
+
+
+    def post(self, request, *args, **kwargs):
+        user_id = kwargs.get('pk')
+        user = CustomUser.objects.get(id=user_id)
+        if user:
+            user.delete()
+        return redirect('users')
